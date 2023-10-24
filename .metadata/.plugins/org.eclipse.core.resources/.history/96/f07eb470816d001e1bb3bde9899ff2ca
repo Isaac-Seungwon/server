@@ -1,0 +1,26 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
+<%
+    request.setCharacterEncoding("UTF-8");
+
+    String path = application.getRealPath("/files");
+    int size = 1024 * 1024 * 100; // 100MB
+
+    String name = request.getParameter("name");
+    String age = request.getParameter("age");
+    String filename = "";
+    String orgfilename = "";
+
+    // Handle file upload
+    Part filePart = request.getPart("attach");
+    if (filePart != null) {
+        filename = filePart.getSubmittedFileName();
+        orgfilename = filename; // Use the original filename if needed
+        filePart.write(path + File.separator + filename);
+    }
+%>
+
+<!DOCTYPE html>
+<html>
+<!-- Rest of your HTML -->
+</html>

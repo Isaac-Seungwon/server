@@ -1,0 +1,16 @@
+package com.test.java;
+
+public class Ex01 {
+
+	public static void main(String[] args) {
+	
+		//Jsoup
+		
+		try {
+			Document doc = Jsoup.connect("http://localhost:8090/memo/list.do");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+}

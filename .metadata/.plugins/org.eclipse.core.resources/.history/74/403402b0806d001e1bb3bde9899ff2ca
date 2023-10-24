@@ -1,0 +1,58 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%
+	request.setCharacterEncoding("UTF-8");
+
+	//String name = request.getParameter("name");
+	//String age = request.getParameter("age");
+	
+	//파일 저장 경로
+	//C:\Class\code\server\JSPTest\src\main\webapp\files
+	//C:\Class\code\server\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\JSPTest\files
+	//System.out.println(path);
+	String path = application.getRealPath("/files");
+	
+	//업로드 파일의 최대 크기 지정
+	//- 바이트 단위
+	int size = 1024 * 1024 * 100; //100MB
+	
+	//변수 선언
+	String name = ""; //이름
+	String age = ""; //나이
+	String filename = ""; //첨부파일명
+	String orgfilename = ""; //첨부파일명
+	
+	//request > MultipartRequest 객체 생성
+	try {
+		MultipartRequest multi = new MultipartRequest(
+									request, //원래 request
+									path, //파일 업로드 위치
+									size, //최대 크기
+									"UTF-8", //"인코딩"
+									new DefaultFileRenamePolicy()
+								);
+	} catch (Exception e) {
+		e.printStackTrace();
+	}
+%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="http://pinnpublic.dothome.co.kr/cdn/example-min.css">
+</head>
+<body>
+	<h1>결과</h1>
+
+	<div>
+		이름: <%= name %>
+	</div>
+	<div>
+		나이: <%= age %>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="http://pinnpublic.dothome.co.kr/cdn/example-min.js"></script>
+</body>
+</html>

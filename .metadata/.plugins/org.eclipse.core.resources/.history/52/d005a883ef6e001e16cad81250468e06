@@ -1,0 +1,42 @@
+package com.test.jdbc;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.Statement;
+
+public class Ex04_PreparedStatement {
+	
+	public static void main(String[] args) {
+
+		String name = "Joseph";
+		String age = "24";
+		String gender = "m";
+		String address = "서울시 강남구 역삼동";
+		
+		Connection conn = null;
+		Statement stat = null;
+		PreparedStatement pstat = null;
+		
+		try {
+			conn = DBUtill.open();
+			
+			if (!conn.isClosed()) {
+				System.out.println("DB 접속 성공");
+				
+				String sql = String.format("INSERT INTO tblAddress (seq, name, age, gender, address, regdate) VALUES (seqAddress.nextVal, '%s', %s, '%s', '%s', default)");
+
+				int result = stat.executeUpdate(sql);
+				
+				System.out.println(result);
+				
+				pstat.close();
+				stat.close();
+				conn.close();
+			} else {
+				System.out.println("DB 접속 실패");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+}

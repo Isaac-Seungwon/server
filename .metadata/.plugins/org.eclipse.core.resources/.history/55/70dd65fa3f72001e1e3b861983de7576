@@ -1,0 +1,68 @@
+package com.test.java;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
+
+public class Ex04 {
+
+	public static void main(String[] args) {
+		
+		//m1();
+		m2();
+	}
+
+	
+	private static void m2() {
+		String webDriverID = "webdriver.edge.driver";
+		String path = "C:\\class\\dev\\msedgedriver.exe";
+
+		System.setProperty(webDriverID, path);
+		
+		//브라우저 참조 객체
+		WebDriver driver = new EdgeDriver();
+
+		String url = "http://lms1.sist.co.kr/worknet/SLogin.asp";
+		driver.get(url);
+		
+		WebElement id = driver.findElement(By.id("strLoginID"));
+		WebElement pw = driver.findElement(By.id("strLoginID"));
+		
+	}
+
+
+	private static void m1() {
+
+		//String webDriverID = "webdriver.chrome.driver";
+		//String path = "C:\\class\\dev\\chromedriver.exe";
+		
+		String webDriverID = "webdriver.edge.driver";
+		String path = "C:\\class\\dev\\msedgedriver.exe";
+
+		System.setProperty(webDriverID, path);
+		
+		//ChromeOptions options = new ChromeOptions();
+		//options.setCapability("ignoreProtectedModeSteeings", true);
+		
+		//브라우저 참조 객체
+		//WebDriver driver = new ChromeDriver(options);
+		WebDriver driver = new EdgeDriver();
+		
+		//네이버 화면 출력
+		String url = "http://naver.com";
+		driver.get(url);
+		
+		//네이버 검색 창 입력
+		WebElement query = driver.findElement(By.id("query"));
+		query.sendKeys("셀레니움");
+		
+		//네이버 검색 버튼 클릭
+		WebElement btn = driver.findElement(By.className("btn_search"));
+		btn.click();
+		
+	}
+	
+}

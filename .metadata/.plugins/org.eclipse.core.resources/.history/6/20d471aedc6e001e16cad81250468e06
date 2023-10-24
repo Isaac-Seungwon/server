@@ -1,0 +1,7 @@
+package com.test.jdbc;
+
+public class DBUtill {
+	
+	private static Connection conn;
+	
+}

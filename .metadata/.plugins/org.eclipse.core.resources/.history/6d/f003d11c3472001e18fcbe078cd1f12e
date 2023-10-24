@@ -1,0 +1,71 @@
+package com.test.java;
+
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.net.URL;
+
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+
+public class Ex02 {
+
+	public static void main(String[] args) {
+		
+		try {
+			
+			String url = "https://movie.daum.net/ranking/boxoffice/weekly";
+			
+			Document doc = Jsoup.connect(url).get();
+			
+			//System.out.println(doc.html());
+			
+			Elements list = doc.select(".item_poster");
+			
+			//System.out.println(list.size());
+			
+			for (Element movie : list) {
+				
+				//영화 제목, 개봉 일자, 관객 수 데이터 추출
+				Element title = movie.selectFirst(".link_txt");
+				System.out.println(title.text());
+				
+				Element date = movie.selectFirst(".txt_num");
+				System.out.println(date.text());
+				
+				Element count = movie.selectFirst(".screen_out");
+				System.out.println(count.nextSibling());
+			
+				//이미지 추출
+				Element poster = movie.selectFirst(".img_thumb");
+				if (poster != null) {
+					System.out.println(poster.attr("src"));
+				}
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
+	private void getImage(String imgUrl) {
+		
+		URL url = null;
+		InputStream in = null;
+		OutputStream out = null;
+		
+		try {
+			
+			url = new URL(imgUrl);
+			in = url.openStream(); //이미지 읽기
+			
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
+}

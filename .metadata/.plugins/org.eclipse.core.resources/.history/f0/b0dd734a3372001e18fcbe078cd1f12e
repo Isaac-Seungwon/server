@@ -1,0 +1,43 @@
+package com.test.java;
+
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+
+public class Ex02 {
+
+	public static void main(String[] args) {
+		
+		try {
+			
+			String url = "https://movie.daum.net/ranking/boxoffice/weekly";
+			
+			Document doc = Jsoup.connect(url).get();
+			
+			//System.out.println(doc.html());
+			
+			Elements list = doc.select(".item_poster");
+			
+			//System.out.println(list.size());
+			
+			for (Element movie : list) {
+				
+				Element title = movie.selectFirst(".link_txt");
+				System.out.println(title.text());
+				
+				Element date = movie.selectFirst(".txt_num");
+				System.out.println(date.text());
+				
+				Element count = movie.selectFirst(".screen_out");
+				System.out.println(count.nextSibling());
+				
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
+}

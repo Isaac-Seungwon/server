@@ -1,0 +1,21 @@
+package com.test.jdbc;
+
+import java.sql.Connection;
+
+public class DBUtill {
+	
+	private static Connection conn;
+	
+	public static Connection open() {
+		String url = "jdbc:oracle:thin:@localhost:1521:xe";
+		String id = "hr";
+		String pw = "java1234";
+		
+		try {
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+	
+}
