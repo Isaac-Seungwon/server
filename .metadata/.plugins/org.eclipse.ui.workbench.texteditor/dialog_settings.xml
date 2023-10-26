@@ -6,8 +6,11 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value=""/>
+		<item key="selection" value="chromiId"/>
 		<list key="findhistory">
+			<item value="chromiid"/>
+			<item value="chromiId"/>
+			<item value="lina"/>
 			<item value="\r\n"/>
 		</list>
 		<list key="replacehistory">
