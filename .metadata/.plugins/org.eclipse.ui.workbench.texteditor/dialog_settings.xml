@@ -6,8 +6,9 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="chromiId"/>
+		<item key="selection" value="추가하기"/>
 		<list key="findhistory">
+			<item value="추가하기"/>
 			<item value="chromiid"/>
 			<item value="chromiId"/>
 			<item value="lina"/>

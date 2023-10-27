@@ -40,9 +40,11 @@
     <fullyQualifiedTypeName name="org.openqa.selenium.WebElement"/>
     <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
     <fullyQualifiedTypeName name="java.sql.Statement"/>
-    <fullyQualifiedTypeName name="com.test.ajax.repository.AjaxDAO"/>
     <fullyQualifiedTypeName name="java.sql.Connection"/>
     <fullyQualifiedTypeName name="com.test.ajax.controller.DBUtil"/>
     <fullyQualifiedTypeName name="java.io.PrintWriter"/>
     <fullyQualifiedTypeName name="com.test.ajax.model.ChromiDTO"/>
+    <fullyQualifiedTypeName name="com.test.ajax.repository.AjaxDAO"/>
+    <fullyQualifiedTypeName name="com.fasterxml.jackson.databind.jsonFormatVisitors.JsonObjectFormatVisitor"/>
+    <fullyQualifiedTypeName name="com.fasterxml.jackson.databind.util.JSONPObject"/>
 </qualifiedTypeNameHistroy>
