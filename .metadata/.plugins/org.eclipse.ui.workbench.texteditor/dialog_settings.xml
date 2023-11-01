@@ -6,13 +6,23 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="추가하기"/>
+		<item key="selection" value=""/>
 		<list key="findhistory">
+			<item value="부적"/>
+			<item value="pointer"/>
+			<item value="address"/>
+			<item value="editName"/>
+			<item value="edit"/>
+			<item value="onchange"/>
+			<item value="onclick"/>
+			<item value="on"/>
+			<item value="300"/>
+			<item value="eq(0)"/>
+			<item value="button"/>
+			<item value="btnAdd"/>
 			<item value="추가하기"/>
 			<item value="chromiid"/>
 			<item value="chromiId"/>
-			<item value="lina"/>
-			<item value="\r\n"/>
 		</list>
 		<list key="replacehistory">
 			<item value=""/>
